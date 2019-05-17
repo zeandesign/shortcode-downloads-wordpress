@@ -7,15 +7,15 @@ function zd_downloads_cpt() {
     'menu_name'          => __( 'Downloads', 'zd' ),
     'name_admin_bar'     => __( 'Download', 'zd' ),
     'add_new'            => __( 'Add New', 'zd' ),
-	'add_new_item'       => __( 'Add New', 'zd' ),
-	'new_item'           => __( 'New', 'zd' ),
-	'edit_item'          => __( 'Edit', 'zd' ),
-	'view_item'          => __( 'View', 'zd' ),
-	'all_items'          => __( 'All', 'zd' ),
-	'search_items'       => __( 'Search', 'zd' ),
-	'parent_item_colon'  => __( 'Parent', 'zd' ),
-	'not_found'          => __( 'No found', 'zd' ),
-	'not_found_in_trash' => __( 'No found in Trash.', 'zd' )
+    'add_new_item'       => __( 'Add New', 'zd' ),
+    'new_item'           => __( 'New', 'zd' ),
+    'edit_item'          => __( 'Edit', 'zd' ),
+    'view_item'          => __( 'View', 'zd' ),
+    'all_items'          => __( 'All', 'zd' ),
+    'search_items'       => __( 'Search', 'zd' ),
+    'parent_item_colon'  => __( 'Parent', 'zd' ),
+    'not_found'          => __( 'No found', 'zd' ),
+    'not_found_in_trash' => __( 'No found in Trash.', 'zd' )
   );
  
   $args = array(
@@ -26,7 +26,7 @@ function zd_downloads_cpt() {
     'show_in_menu'       => true,
     'query_var'          => true,
     'rewrite'            => array( 'slug' => __( 'downloads', 'zd' ) ),
-	'menu_icon'          => 'dashicons-download',
+    'menu_icon'          => 'dashicons-download',
     'capability_type'    => 'post',
     'has_archive'        => false,
     'hierarchical'       => false,
@@ -67,9 +67,9 @@ function zd_downloads_callback( $atts, $content = null ) {
 	
 	$atts = shortcode_atts( array(
 		    'class'          => false,
-			'order'          => 'DESC',
-			'orderby'        => 'date',
-			'posts_per_page' => 12,
+		    'order'          => 'DESC',
+		    'orderby'        => 'date',
+		    'posts_per_page' => 12,
      ), $atts );
 	
 	$class   = array();
@@ -79,7 +79,7 @@ function zd_downloads_callback( $atts, $content = null ) {
 	$args['post_type']      = 'downloads';
 	$args['post_status']    = 'publish';
 	$args['order']          = $atts['order'];
-    $args['orderby']        = $atts['orderby'];
+        $args['orderby']        = $atts['orderby'];
 	$args['posts_per_page'] = $atts['posts_per_page'];
 	$args['paged']          = $paged;
 
@@ -96,8 +96,8 @@ function zd_downloads_callback( $atts, $content = null ) {
 	$total_pages = ceil( $post_query->found_posts / $items_per_page );
 	
 	$currentPage = $paged;
-    $numPages = $total_pages;
-    $howMany = 4;
+        $numPages = $total_pages;
+        $howMany = 4;
 	
 	if ( $total_pages > 1 ) :
 		$output .= '<nav>';
